@@ -16,6 +16,12 @@ async function seed() {
   });
   console.log('Book was added');
 
+  await Book.create({
+    name: 'Grimm\'s Fairy Tales',
+    description:'some scary fairytales',
+    status: true
+  });
+  console.log('Book was added');
   // await Cat.create({
   //   name: 'Karl',
   //   color: 'Black and white tabby',

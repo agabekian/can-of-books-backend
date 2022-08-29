@@ -12,7 +12,7 @@ async function seed() {
   await Book.create({
     name: 'The Big Book',
     description:'some big book',
-    status: 'true'
+    status: true
   });
   console.log('Book was added');
 

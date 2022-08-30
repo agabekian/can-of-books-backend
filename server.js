@@ -10,6 +10,7 @@ const Book = require('./models/book.js');
 
 // connect Mongoose to our MongDB
 mongoose.connect(process.env.DB_URL);
+// mongoose.connect(process.env.DB_URL);
 
 // add validation to confirm we are wired up to our mongoDB
 const db = mongoose.connection;

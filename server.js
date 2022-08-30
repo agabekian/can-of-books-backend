@@ -47,7 +47,31 @@ async function getBooks(request, response, next) {
     next(error);
   }
 }
+app.post('/books', postBook);
 
+async function postBook(request, response, next) {
+  console.log(request.body);
+  try {
+    const newCat = await Book.create(request.body);
+    response.status(201).send(newCat);
+  } catch (error) {
+    next(error);
+  }
+}
+
+app.delete('/books/:bookid', deleteBook);
+
+async function deleteBook(request, response, next) {
+  // matches the 'variable' after the colon on line 65
+  const id = request.params.bookid;
+  console.log(id);
+  try {
+    await Book.findByIdAndDelete(id);
+    response.status(204).send('success!');
+  } catch (error) {
+    next(error);
+  }
+}
 app.get('*', (request, response) => {
   response.status(404).send('Not availabe');
 });

@@ -1,6 +1,6 @@
 # Project Name
-**Author**: Armen
-**Version**: 1.0.1 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Armen, Tim
+**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 ## What can books do?
 Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
 ### Overview
@@ -8,7 +8,7 @@ Displays best books information. Will allow user to add and delete books from th
 ### Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 ### Architecture
-Javascript
+React with Javascript/CSS/HTML
 MongoDB
 ### Change Log
 08.30.22 - Functioning Day1, 3 books display in carousel.

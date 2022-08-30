@@ -4,8 +4,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
-const mongoose = require('mongoose');
 
+const mongoose = require('mongoose');
 const Book = require('./models/book.js');
 
 // connect Mongoose to our MongDB
@@ -21,6 +21,7 @@ db.once('open', function () {
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 
@@ -43,6 +44,31 @@ async function getBooks(request, response, next) {
   try {
     let results = await Book.find();
     response.status(200).send(results);
+  } catch (error) {
+    next(error);
+  }
+}
+app.post('/books', postBook);
+
+async function postBook(request, response, next) {
+  console.log('line 53', request.body);
+  try {
+    const newCat = await Book.create(request.body);
+    response.status(201).send(newCat);
+  } catch (error) {
+    next(error);
+  }
+}
+
+app.delete('/books/:bookid', deleteBook);
+
+async function deleteBook(request, response, next) {
+  // matches the 'variable' after the colon on line 65
+  const id = request.params.bookid;
+  console.log('line67', id);
+  try {
+    await Book.findByIdAndDelete(id);
+    response.status(204).send('success!');
   } catch (error) {
     next(error);
   }

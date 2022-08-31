@@ -73,3 +73,13 @@ Start time: 1pm
 Finish time: 3pm
 
 Actual time needed to complete: 2 hours
+
+Name of feature: Prvide delte and post functionality on backend
+
+Estimate of time needed to complete: 1 hours
+
+Start time: 1pm
+
+Finish time: 3pm
+
+Actual time needed to complete: 2 hours (with deployment)

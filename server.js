@@ -53,8 +53,8 @@ app.post('/books', postBook);
 async function postBook(request, response, next) {
   console.log('line 53', request.body);
   try {
-    const newCat = await Book.create(request.body);
-    response.status(201).send(newCat);
+    const newBook = await Book.create(request.body);
+    response.status(201).send(newBook);
   } catch (error) {
     next(error);
   }
@@ -89,7 +89,7 @@ async function putBooks(request, response, next){
     // 3. option objects - { new: true, overwrite: true }
 
     const updateBook = await Book.findByIdAndUpdate(id, data, { new: true, overwrite: true });
-    response.status(201).send(updateCat);
+    response.status(201).send(updateBook);
 
   } catch (error) {
     next(error);
